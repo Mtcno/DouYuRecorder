@@ -1,0 +1,86 @@
+﻿<Application x:Class="DouYuRecorderUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:DouYuRecorderUI"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ControlTemplate x:Key="UserButton" TargetType="Button">
+            <Grid>
+                <Border BorderBrush="Black" BorderThickness="1" Background="Transparent" Grid.IsSharedSizeScope="False">
+                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Content}"  />
+                </Border>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="UserTitleBar" 
+                         TargetType="Label">
+            <Grid Background="{TemplateBinding Background}">
+                <Border Width="{TemplateBinding Width}"
+                        Height="{TemplateBinding Height}"
+                        Name="titleBorder"
+                        BorderBrush="Black" 
+                        BorderThickness="0" 
+                        Background="Transparent" 
+                        Padding="0,0,0,0"
+                        VerticalAlignment="Center"
+                        Grid.IsSharedSizeScope="False" 
+                        >
+
+                    <TextBlock TextWrapping="Wrap" 
+                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}" Text="{TemplateBinding Content}" 
+                               Padding="{TemplateBinding Padding}"
+                               />
+                </Border>
+                
+ 
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="UserMinimizedButton" TargetType="Button">
+            <Grid Width="{TemplateBinding Width}"
+                  Height="{TemplateBinding Height}" Background="#00000000"
+                  >
+                <Viewbox Width="30" Height="30" >
+                    <Canvas Width="28" Height="28">
+                        <Path Data="M5,20H24"  Stroke="#FF060606" StrokeThickness="1" Height="28" Width="28"   >
+                            <Path.Fill>
+                                <ImageBrush/>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                </Viewbox>
+            </Grid>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="UserCloseButton" TargetType="Button">
+            <Grid Width="{TemplateBinding Width}"
+                  Height="{TemplateBinding Height}" Background="#00000000"
+                  HorizontalAlignment="Center" VerticalAlignment="Center"
+                  >
+                <Viewbox Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Canvas Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Path Data="M6,6L6,6l16,16 M6,22L6,22l16,-16"  Stroke="#FF060606" StrokeThickness="1" Height="28" Width="28"   >
+                            <Path.Fill>
+                                <ImageBrush/>
+                            </Path.Fill>
+                        </Path>
+                    </Canvas>
+                </Viewbox>
+            </Grid>
+        </ControlTemplate>
+
+        <Style TargetType="Control" x:Key="AllColor">
+            <Setter Property="Foreground"  Value="#FFE0E0E0"/>
+        </Style>
+
+        <Style TargetType="Control" x:Key="BtnTextColor">
+            <Setter Property="Foreground"  Value="Black"/>
+        </Style>
+
+        <Style TargetType="Control" x:Key="InputTextColor">
+            <Setter Property="Foreground"  Value="White"/>
+        </Style>
+
+    </Application.Resources>
+</Application>

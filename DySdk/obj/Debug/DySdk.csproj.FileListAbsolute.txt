@@ -1,0 +1,15 @@
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\DySdk.dll.config
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\DySdk.dll
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\DySdk.pdb
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\System.Data.SQLite.dll
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\System.Data.SQLite.xml
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Debug\DySdk.csprojAssemblyReference.cache
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Debug\DySdk.csproj.CoreCompileInputs.cache
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Debug\DySdk.csproj.CopyComplete
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Debug\DySdk.dll
+C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Debug\DySdk.pdb
