@@ -7,7 +7,7 @@
 讲真，C#挺好用的。  
 
 ### 资料
-1、抓视频参考 [you-get](https://github.com/soimort/you-get)
+1、抓视频参考 [you-get](https://github.com/soimort/you-get)  
 2、弹幕接口资料网上大把 《斗鱼弹幕服务器第三方接入协议v1.6.2》 《斗鱼第三方开放平台API文档v2.2》
 
 ### 使用说明
