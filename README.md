@@ -14,6 +14,7 @@
 1、需要安装ffmpeg，并设置环境变量，或者将ffmpeg\bin的文件放在软件目录中的FFmpeg文件夹里面。
 
 ### 通知 
+20190307 更新斗鱼api，需要ChakraCore.dll。  
 20190304 you-get的斗鱼api失效，当前不能用  
 
 
