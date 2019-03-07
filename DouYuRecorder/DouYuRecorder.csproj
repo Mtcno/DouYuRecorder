@@ -36,7 +36,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Build\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -45,7 +45,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\Build\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -97,6 +97,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DyUtil.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -156,6 +157,10 @@
     <ProjectReference Include="..\DySdk\DySdk.csproj">
       <Project>{4e3a9197-1bf1-484b-b80c-33b6b350b527}</Project>
       <Name>DySdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JsEngineChakra\JsEngineChakra.csproj">
+      <Project>{040377fa-fc10-46aa-82d2-884a013b0265}</Project>
+      <Name>JsEngineChakra</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

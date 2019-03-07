@@ -101,6 +101,7 @@ namespace DouYuRecorder
 
             string ffmpeg_path = Directory.GetCurrentDirectory() + "\\" +
                 "FFmpeg";
+
             if (Directory.Exists(ffmpeg_path))
             {
                 var syspath = Environment.GetEnvironmentVariable("path");
@@ -113,11 +114,17 @@ namespace DouYuRecorder
 
             opdata = new Operator(this);
 
-
         }
 
 
-
+        private void SetAppSysPath(string addpath)
+        {
+            if (Directory.Exists(addpath))
+            {
+                var syspath = Environment.GetEnvironmentVariable("path");
+                Environment.SetEnvironmentVariable("path", addpath + ";" + syspath);
+            }
+        }
 
 
         // 配置
@@ -213,7 +220,7 @@ namespace DouYuRecorder
             
         }
 
-
+        /*
         private static void CheckRecordStatus(object obj)
         {
             MainWindow win = (MainWindow)obj;
@@ -237,11 +244,14 @@ namespace DouYuRecorder
                 Thread.Sleep(3000);
             }
         }
+        */
+
+
 
         // 录制按钮
         public bool btn_record_clicked = false;
         public bool btn_auto_record_clicked = false;
-        private Thread ThreadRecordCheck;
+        //private Thread ThreadRecordCheck;
         private void BtnRecord_Clicked(object sender, RoutedEventArgs e)
         {
             FrameworkElement src = e.Source as FrameworkElement;
@@ -273,8 +283,6 @@ namespace DouYuRecorder
                             btn_record.Content = "停止录制";
                             opdata.RecordStart();
                             btn_record_clicked = true;
-                            ThreadRecordCheck = new Thread(new ParameterizedThreadStart(CheckRecordStatus));
-                            ThreadRecordCheck.Start(this);
                         }
                         else
                         {
@@ -333,7 +341,8 @@ namespace DouYuRecorder
 
                     case "WindowClose":
                         opdata.bAutoRecord = false;
-                        opdata.StartDanmu = false;
+                        opdata.RecordStop();
+                        //opdata.StartDanmu = false;
                         nficon.Visible = false;
                         Close();
                         break;

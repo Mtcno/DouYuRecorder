@@ -1,0 +1,6 @@
+D:\jobs\git\DouYuRecorder\Build\Release\JsEngineChakra.dll
+D:\jobs\git\DouYuRecorder\Build\Release\JsEngineChakra.pdb
+D:\jobs\git\DouYuRecorder\JsEngineChakra\obj\Release\JsEngineChakra.csprojAssemblyReference.cache
+D:\jobs\git\DouYuRecorder\JsEngineChakra\obj\Release\JsEngineChakra.csproj.CoreCompileInputs.cache
+D:\jobs\git\DouYuRecorder\JsEngineChakra\obj\Release\JsEngineChakra.dll
+D:\jobs\git\DouYuRecorder\JsEngineChakra\obj\Release\JsEngineChakra.pdb

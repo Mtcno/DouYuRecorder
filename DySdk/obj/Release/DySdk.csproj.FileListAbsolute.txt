@@ -12,3 +12,10 @@ C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Release\DySdk.csproj.CoreCom
 C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Release\DySdk.csproj.CopyComplete
 C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Release\DySdk.dll
 C:\Users\Lucky\source\repos\douyuRecorder\DySdk\obj\Release\DySdk.pdb
+D:\jobs\git\DouYuRecorder\Build\Release\DySdk.dll
+D:\jobs\git\DouYuRecorder\Build\Release\DySdk.pdb
+D:\jobs\git\DouYuRecorder\DySdk\obj\Release\DySdk.csprojAssemblyReference.cache
+D:\jobs\git\DouYuRecorder\DySdk\obj\Release\DySdk.csproj.CoreCompileInputs.cache
+D:\jobs\git\DouYuRecorder\DySdk\obj\Release\DySdk.csproj.CopyComplete
+D:\jobs\git\DouYuRecorder\DySdk\obj\Release\DySdk.dll
+D:\jobs\git\DouYuRecorder\DySdk\obj\Release\DySdk.pdb

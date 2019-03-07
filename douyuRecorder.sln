@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DySdk", "DySdk\DySdk.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DouYuRecorder", "DouYuRecorder\DouYuRecorder.csproj", "{DC1B49BE-F0BA-4F6D-9794-A0A6F236EDF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsEngineChakra", "JsEngineChakra\JsEngineChakra.csproj", "{040377FA-FC10-46AA-82D2-884A013B0265}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DC1B49BE-F0BA-4F6D-9794-A0A6F236EDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC1B49BE-F0BA-4F6D-9794-A0A6F236EDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC1B49BE-F0BA-4F6D-9794-A0A6F236EDF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040377FA-FC10-46AA-82D2-884A013B0265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040377FA-FC10-46AA-82D2-884A013B0265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040377FA-FC10-46AA-82D2-884A013B0265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040377FA-FC10-46AA-82D2-884A013B0265}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

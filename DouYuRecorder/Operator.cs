@@ -209,11 +209,14 @@ namespace DouYuRecorder
         private static void StartVideoRecord(object obj)
         {
             Operator op = (Operator)obj;
-            string procmsg = DyVideo.VideoOperate(op.RoomID, 
+            string url = op.GetDouYuUrl();
+            string real_rmtp = DyUtil.DyGetRealRtmp(url);
+            string procmsg = DyVideo.VideoOperate(real_rmtp, 
                 "save",op.RecordFilePath + ".flv" , 
                 out op.VideoProc);
             op.LogError(procmsg,true);
             op.LogError("Video Record 结束", true);
+            op.StartDanmu = false;
         }
 
         public bool GetShowStatus()
@@ -265,20 +268,23 @@ namespace DouYuRecorder
                     Directory.CreateDirectory(RecordSavePath);
                 }
                 RecordFilePath = RecordSavePath + "\\" + MakeRecordFilePath();
-            } catch (Exception e)
+
+
+                ThreadDanmu = null;
+                ThreadDanmu = new Thread(new ParameterizedThreadStart(StartDanmuRecord));
+                ThreadDanmu.Start(this);
+
+                VideoProc = null;
+                ThreadVideo = null;
+                ThreadVideo = new Thread(new ParameterizedThreadStart(StartVideoRecord));
+                ThreadVideo.Start(this);
+
+            }
+            catch (Exception e)
             {
-                LogError("RecordStart:" + e.Message,true);
+                LogError("RecordStart:" + e.Message, true);
                 return false;
             }
-
-            ThreadDanmu = null;
-            ThreadDanmu = new Thread(new ParameterizedThreadStart(StartDanmuRecord));
-            ThreadDanmu.Start(this);
-
-            VideoProc = null;
-            ThreadVideo = null;
-            ThreadVideo = new Thread(new ParameterizedThreadStart(StartVideoRecord));
-            ThreadVideo.Start(this);
 
             return true;
         }
@@ -289,7 +295,6 @@ namespace DouYuRecorder
             VideoProc = null;
             StartDanmu = false; 
             RoomID = 0;    
-            
         }
 
 

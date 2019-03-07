@@ -184,6 +184,23 @@ namespace DySdk
             }
             return 0;
         }
+
+        public static string GetRoomJsFromUrl(string douyuUrl)
+        {
+            ulong rid = GetRidFromUrl(douyuUrl);
+            if (rid == 0) return null;
+            string api_roomjs = "https://www.douyu.com/swf_api/homeH5Enc?rids=" + rid;
+            try
+            {
+                var dict = JsonHandle.GetDict(HttpReq.ReqUrl(api_roomjs));
+                return dict["data.room" + rid];
+            }
+            catch(Exception)
+            {
+                return null;
+            }
+        }
+
     }
     public class DyMsg
     {
@@ -404,6 +421,73 @@ namespace DySdk
                             "-i {0} " +
                             "-c copy -bsf:a aac_adtstoasc \"{1}\" ",
                              rtmputl, 
+                             savepath);
+                        break;
+                    case null:
+                        return "Not Found Command";
+                }
+
+                cmd.StartInfo.Arguments = ffplayArgs;
+                cmd.StartInfo.UseShellExecute = false;
+                cmd.StartInfo.RedirectStandardOutput = true;
+                cmd.StartInfo.RedirectStandardError = true;
+                cmd.ErrorDataReceived += Proc_OutDataReceived;
+                cmd.OutputDataReceived += Proc_OutDataReceived;
+                cmd.StartInfo.CreateNoWindow = true;
+
+
+                try
+                {
+                    cmd.Start();
+                }
+                catch (Exception e)
+                {
+                    proOutString = "RecordVideo: " + e.Message;
+                    proc = null;
+                }
+
+                cmd.BeginOutputReadLine();
+                cmd.BeginErrorReadLine();
+                cmd.WaitForExit();
+
+                fs.Close();
+                stDictFs.Remove(cmd);
+            }
+            return proOutString;
+        }
+
+        public static string VideoOperate(string url, string op, string savepath, out Process proc)
+        {
+            proc = null;
+            string rtmputl = url;
+            if (rtmputl == null) return "Rtmp Url Error";
+            string proOutString = null;
+
+            string logName = string.Format("FFmpeg.log");
+            File.Create(logName).Close();
+
+
+            using (Process cmd = new Process())
+            {
+                FileStream fs = new FileStream(logName, FileMode.Append);
+                stDictFs.Add(cmd, fs);
+                proc = cmd;
+                string ffplayArgs = null;
+                //string reqHeaders = "-headers \"user-agent:Mozilla/5.0 (iPad; CPU OS 8_1_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B466 Safari/600.1.4\r\n\" ";
+                switch (op)
+                {
+                    case "play":
+                        System.Environment.SetEnvironmentVariable("SDL_AUDIODRIVER", "directsound");
+                        cmd.StartInfo.FileName = "ffplay.exe";
+                        ffplayArgs = string.Format("-i {0}",
+                            rtmputl);
+                        break;
+                    case "save":
+                        cmd.StartInfo.FileName = "ffmpeg.exe";
+                        ffplayArgs = string.Format("-threads 1 -y -re " +
+                            "-i {0} " +
+                            "-c copy -bsf:a aac_adtstoasc \"{1}\" ",
+                             rtmputl,
                              savepath);
                         break;
                     case null:
